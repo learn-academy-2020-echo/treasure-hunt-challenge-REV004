@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-class Square extends Component{
-  render(){
-    return(
-      <React.Fragment>
-      </React.Fragment>
-    )
-  }
+class Square extends Component {
+	handleClick = () => {
+		this.props.handleGamePlay(this.props.index);
+	};
+	render() {
+		return (
+			<React.Fragment>
+				<div id='square' onClick={this.handleClick}>
+					{this.props.value}
+				</div>
+			</React.Fragment>
+		);
+	}
 }
-export default Square
+export default Square;
